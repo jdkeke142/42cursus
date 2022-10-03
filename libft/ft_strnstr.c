@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.c                                            :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 11:45:08 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/03 18:24:34 by kjimenez         ###   ########.fr       */
+/*   Created: 2022/10/03 15:36:50 by kjimenez          #+#    #+#             */
+/*   Updated: 2022/10/03 16:24:12 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <string.h>
-# ifdef linux
-#  pragma GCC diagnostic ignored "-Wunused-value"
-#  include <bsd/string.h>
-# endif
+#include "libft.h"
 
-int	main(void)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	char	*s1 = "oh no not the empty string !";
-	char	*s2 = "";
-	size_t	max = 0;
+	size_t	i;
+	size_t	j;
+	size_t	s2_len;
 
-	char	*i1 = strnstr(s1, s2, max);
-	char	*i2 = ft_strnstr(s1, s2, max);
-	
-	printf("STD : %s\n", i1);
-	printf("FT : %s", i2);
-
-	ft_substr(NULL, 0, 12);
+	s2_len = ft_strlen(s2);
+	if (s2_len == 0 || n == 0)
+		return ((char *) s1);
+	i = 0;
+	while (i < n && s1[i])
+	{
+		j = 0;
+		while (i + j < n && s1[i + j] && s2[j] && s1[i + j] == s2[j])
+			j++;
+		if (s2_len == j)
+			return ((char *) &s1[i]);
+		i++;
+	}
+	return (NULL);
 }

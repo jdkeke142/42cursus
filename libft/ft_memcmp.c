@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.c                                            :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 11:45:08 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/03 18:24:34 by kjimenez         ###   ########.fr       */
+/*   Created: 2022/10/03 17:32:41 by kjimenez          #+#    #+#             */
+/*   Updated: 2022/10/03 18:01:15 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <string.h>
-# ifdef linux
-#  pragma GCC diagnostic ignored "-Wunused-value"
-#  include <bsd/string.h>
-# endif
 
-int	main(void)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*s1 = "oh no not the empty string !";
-	char	*s2 = "";
-	size_t	max = 0;
+	size_t	i;
+	char	*s1_char;
+	char	*s2_char;
 
-	char	*i1 = strnstr(s1, s2, max);
-	char	*i2 = ft_strnstr(s1, s2, max);
-	
-	printf("STD : %s\n", i1);
-	printf("FT : %s", i2);
-
-	ft_substr(NULL, 0, 12);
+	s1_char = (char *) s1;
+	s2_char = (char *) s2;
+	i = 0;
+	while (i < n - 1 && *s1_char && *s2_char && *s1_char == *s2_char)
+	{
+		s1_char++;
+		s2_char++;
+		i++;
+	}
+	return (s1_char[i] - s2_char[i]);
 }

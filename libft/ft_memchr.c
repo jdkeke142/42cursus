@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.c                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 11:45:08 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/03 18:24:34 by kjimenez         ###   ########.fr       */
+/*   Created: 2022/10/03 16:48:46 by kjimenez          #+#    #+#             */
+/*   Updated: 2022/10/03 16:58:19 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <string.h>
-# ifdef linux
-#  pragma GCC diagnostic ignored "-Wunused-value"
-#  include <bsd/string.h>
-# endif
 
-int	main(void)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*s1 = "oh no not the empty string !";
-	char	*s2 = "";
-	size_t	max = 0;
+	size_t	i;
+	char	*s_char;
+	size_t	s_len;
 
-	char	*i1 = strnstr(s1, s2, max);
-	char	*i2 = ft_strnstr(s1, s2, max);
-	
-	printf("STD : %s\n", i1);
-	printf("FT : %s", i2);
-
-	ft_substr(NULL, 0, 12);
+	s_char = (char *) s;
+	s_len = ft_strlen(s_char);
+	i = 0;
+	if (c == '\0' && n >= s_len)
+		return (&s_char[s_len]);
+	while (i < n && s_char[i])
+	{
+		if (s_char[i] == c)
+			return (&s_char[i]);
+		i++;
+	}
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 11:40:43 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/09/30 16:07:13 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/03 18:29:09 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,11 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src,
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strnstr(const char *s1, const char *s2, size_t n);
+void	*ft_calloc(size_t nitems, size_t size);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *str1, const void *str2, size_t n);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
