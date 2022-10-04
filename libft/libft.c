@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 11:45:08 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/03 18:24:34 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/04 17:24:07 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,8 @@
 
 int	main(void)
 {
-	char	*s1 = "oh no not the empty string !";
-	char	*s2 = "";
-	size_t	max = 0;
+	char	dirty_str[] = "    this is a dirty string     ";
+	char	to_remove[] = " ";
 
-	char	*i1 = strnstr(s1, s2, max);
-	char	*i2 = ft_strnstr(s1, s2, max);
-	
-	printf("STD : %s\n", i1);
-	printf("FT : %s", i2);
-
-	ft_substr(NULL, 0, 12);
+	printf("%s", ft_strtrim(dirty_str, to_remove));
 }
