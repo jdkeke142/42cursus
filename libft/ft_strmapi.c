@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 17:32:41 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/07 17:19:00 by kjimenez         ###   ########.fr       */
+/*   Created: 2022/10/07 17:36:34 by kjimenez          #+#    #+#             */
+/*   Updated: 2022/10/07 17:43:51 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned
+int, char))
 {
-	size_t			i;
-	unsigned char	*s1_char;
-	unsigned char	*s2_char;
+	int		i;
+	char	*modified_s;
 
-	s1_char = (unsigned char *) s1;
-	s2_char = (unsigned char *) s2;
+	if (s == NULL)
+		return (NULL);
 	i = 0;
-	while (i < n - 1 && s1_char[i] == s2_char[i])
+	modified_s = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!modified_s)
+		return (NULL);
+	while (s[i])
+	{
+		modified_s[i] = (*f)(i, s[i]);
 		i++;
-	return ((unsigned char) s1_char[i] - s2_char[i]);
+	}
+	modified_s[i] = '\0';
+	return (modified_s);
 }

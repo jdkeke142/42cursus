@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:45:19 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/09/29 14:19:41 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/07 17:25:35 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,28 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t					i;
-	unsigned int			dest_len;
-	char					*dest_dereference;
-	const char				*src_dereference;
+	size_t		i;
+	char		*dest_char;
+	char		*src_char;
 
-	dest_dereference = dest;
-	src_dereference = src;
-	i = 0;
-	if (src < dest)
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	dest_char = (char *) dest;
+	src_char = (char *) src;
+	if ((src_char < dest_char) && (dest_char < src_char + n))
 	{
-		dest_len = ft_strlen(dest_dereference);
-		while (i < n && i < dest_len)
+		while (n > 0)
 		{
-			dest_dereference[dest_len-i] = src_dereference[dest_len-i];
-			i++;
+			dest_char[n] = src_char[n];
+			n--;
 		}
-		//back to front
 	}
-	else if (dest < src)
+	else
 	{
-		//front to back
-		while (i < n && src_dereference[i])
+		i = 0;
+		while (i < n)
 		{
-			dest_dereference[i] = src_dereference[i];
+			dest_char[i] = src_char[i];
 			i++;
 		}
 	}

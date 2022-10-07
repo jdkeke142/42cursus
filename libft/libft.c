@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 11:45:08 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/04 17:24:07 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/07 16:32:56 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 
 int	main(void)
 {
-	char	dirty_str[] = "    this is a dirty string     ";
-	char	to_remove[] = " ";
+	char	n[40] = "2147483649000000";
 
-	printf("%s", ft_strtrim(dirty_str, to_remove));
+	printf("std number is %d.\n", atoi(n));
+	printf("ft Number is %d.\n", ft_atoi(n));
 }

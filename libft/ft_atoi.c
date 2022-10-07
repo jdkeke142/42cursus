@@ -6,56 +6,50 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 14:20:32 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/09/30 12:54:59 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/07 17:44:47 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(char c)
+void	ft_atoi_whitespace(const char *nptr, int *i)
 {
-	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\v'
-		|| c == '\r' || c == ' ')
-		return (1);
-	return (0);
+	while (nptr[*i] == '\t' || nptr[*i] == '\n' || nptr[*i] == '\v'
+		|| nptr[*i] == '\f' || nptr[*i] == '\v'
+		|| nptr[*i] == '\r' || nptr[*i] == ' ')
+		(*i)++;
+}
+
+int	ft_atoi_sign(const char *nptr, int *i)
+{
+	int	sign;
+	int	sign_changed;
+
+	sign = 1;
+	sign_changed = 0;
+	while (nptr[*i] == '+' || nptr[*i] == '-')
+	{
+		if (sign_changed)
+			sign = 0;
+		if (nptr[*i] == '-')
+			sign = -sign;
+		sign_changed = 1;
+		(*i)++;
+	}
+	return (sign);
 }
 
 int	ft_atoi(const char *nptr)
 {
-	int		i;
-	int		char_as_num;
-	int		res;
-	int		sign;
-	int 	sign_changed;
-	int 	number_initialized;
+	int			i;
+	int			res;
+	int			sign;
 
-	sign = 1;
-	sign_changed = 0;
 	i = 0;
+	ft_atoi_whitespace(nptr, &i);
+	sign = ft_atoi_sign(nptr, &i);
 	res = 0;
-	number_initialized = 0;
-	while (nptr[i])
+	while (nptr[i] - '0' >= 0 && nptr[i] - '0' <= 9)
 	{
-		char_as_num = nptr[i] - '0';
-		if (char_as_num >= 0 && char_as_num <= 9)
-		{
-
-			res = (res * 10) + char_as_num;
-			number_initialized = 1;
-		}
-		else if (nptr[i] == '+' || nptr[i] == '-')
-		{
-			if (sign_changed)
-				return (0);
-			if (number_initialized)
-				break;
-			if (nptr[i] == '-')
-				sign = -1;
-			sign_changed = 1;
-			number_initialized = 1;
-		}
-		else if (ft_isspace(nptr[i]) && number_initialized)
-			break;
-		else if (!ft_isspace(nptr[i]))
-			break;
+		res = (res * 10) + (nptr[i] - '0');
 		i++;
 	}
 	return (res * sign);
