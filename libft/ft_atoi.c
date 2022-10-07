@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 14:20:32 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/07 17:44:47 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/07 18:52:12 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int	ft_atoi_sign(const char *nptr, int *i)
 
 int	ft_atoi(const char *nptr)
 {
-	int			i;
-	int			res;
-	int			sign;
+	int	i;
+	int	res;
+	int	sign;
 
 	i = 0;
 	ft_atoi_whitespace(nptr, &i);
