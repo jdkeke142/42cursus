@@ -39,7 +39,7 @@ char **ft_split(char const *untrimmed_s, char c)
 	char	*s;
 	int		words_count;
 
-	if (untrimmed_s == NULL)
+	if (!untrimmed_s)
 		return (NULL);
 	s = ft_strtrim(untrimmed_s, &c);
 	i = 0;

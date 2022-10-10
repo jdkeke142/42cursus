@@ -19,7 +19,7 @@ int, char))
 	int		i;
 	char	*modified_s;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	i = 0;
 	modified_s = malloc((ft_strlen(s) + 1) * sizeof(char));

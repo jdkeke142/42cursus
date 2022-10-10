@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int	set_contains(char const *set, char const c)
@@ -52,7 +51,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		trimmed_size;
 	int		boundaries[2];
 
-	if (s1 == NULL)
+	if (!s1)
 		return (NULL);
 	ft_strtrim_boundaries(s1, set, boundaries);
 	trimmed_size = (boundaries[1] - boundaries[0]) + 1;
