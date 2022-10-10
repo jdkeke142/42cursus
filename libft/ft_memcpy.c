@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:45:19 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/09/29 13:00:45 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/10 17:48:46 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	if (!src_dereference && !dest_dereference)
 		return (dest);
-	while (i < n && src_dereference[i])
+	while (i < n)
 	{
 		dest_dereference[i] = src_dereference[i];
 		i++;
