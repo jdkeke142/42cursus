@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:36:50 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/03 16:24:12 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/10 17:28:49 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	size_t	j;
 	size_t	s2_len;
 
+	if (ft_strncmp(s2, "", ft_strlen(s2)) == 0)
+		return ((char *) s2);
+	if (n == 0)
+		return (0);
 	s2_len = ft_strlen(s2);
 	if (s2_len == 0 || n == 0)
 		return ((char *) s1);

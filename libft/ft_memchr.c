@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:48:46 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/03 16:58:19 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/10 17:40:09 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char	*s_char;
 	size_t	s_len;
 
+	if (n == 0)
+		return (NULL);
 	s_char = (char *) s;
 	s_len = ft_strlen(s_char);
 	i = 0;

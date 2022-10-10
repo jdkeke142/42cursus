@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 int	set_contains(char const *set, char const c)
 {
@@ -56,7 +57,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strtrim_boundaries(s1, set, boundaries);
 	trimmed_size = (boundaries[1] - boundaries[0]) + 1;
 	i = 0;
-	trimmed_str = malloc((trimmed_size + 1) * sizeof(char));
+	trimmed_str = ft_calloc(trimmed_size + 1, sizeof(char));
 	if (!trimmed_str)
 		return (NULL);
 	while (i < trimmed_size)

@@ -2,6 +2,7 @@
 *.a
 *.o
 *.so
+libft/libft.c
 libft-unit-tests/
 libftTester/
 libft-war-machine/
