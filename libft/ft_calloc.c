@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:33:59 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/10 16:55:57 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/19 16:52:19 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*allocated;
 
+	if (nitems > 46340 || size > 46340)
+		return (NULL);
 	allocated = malloc(nitems * size);
 	if (!allocated)
 		return (NULL);
