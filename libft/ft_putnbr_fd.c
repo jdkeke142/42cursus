@@ -6,9 +6,11 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:51:15 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 21:28:08 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:31:19 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putnbr_char(char c, int fd)
 {
