@@ -6,11 +6,13 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 14:20:32 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 21:59:30 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:33:13 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_atoi_whitespace(const char *nptr, int *i)
+#include "libft.h"
+
+void	ft_atoi_whitespace(const char *nptr, size_t *i)
 {
 	while (nptr[*i] == '\t' || nptr[*i] == '\n' || nptr[*i] == '\v'
 		|| nptr[*i] == '\f' || nptr[*i] == '\v'
@@ -18,10 +20,10 @@ void	ft_atoi_whitespace(const char *nptr, int *i)
 		(*i)++;
 }
 
-int	ft_atoi_sign(const char *nptr, int *i)
+int	ft_atoi_sign(const char *nptr, size_t *i)
 {
-	int	sign;
-	int	sign_changed;
+	int		sign;
+	size_t	sign_changed;
 
 	sign = 1;
 	sign_changed = 0;
@@ -39,9 +41,9 @@ int	ft_atoi_sign(const char *nptr, int *i)
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	res;
-	int	sign;
+	size_t	i;
+	size_t	res;
+	int		sign;
 
 	i = 0;
 	ft_atoi_whitespace(nptr, &i);

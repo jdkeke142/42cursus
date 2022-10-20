@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:45:19 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 21:24:37 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:36:07 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_memmove_back(char *dest, const char *src, size_t n)
 {
-	int		i;
+	int	i;
 
 	i = n - 1;
 	while (i >= 0)
@@ -26,10 +26,10 @@ void	ft_memmove_back(char *dest, const char *src, size_t n)
 
 void	ft_memmove_front(char *dest, const char *src, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (i < (int) n)
+	while (i < n)
 	{
 		dest[i] = src[i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:14:32 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 22:16:10 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:31:45 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	set_contains(char const *set, char const c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (set[i])

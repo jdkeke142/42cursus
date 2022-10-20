@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:08:09 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 21:27:20 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:32:09 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	ft_substr_len(char const *s, unsigned int start, size_t len)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t		i;
-	char		*sub_str;
-	int			malloc_len;
+	size_t	i;
+	size_t	malloc_len;
+	char	*sub_str;
 
 	if (!s || start >= ft_strlen(s))
 		return (ft_strdup(""));

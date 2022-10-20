@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 16:11:22 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 21:28:50 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:28:27 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	count_digits(int number)
 {
-	long	number_long;
-	int		digits;
+	long		number_long;
+	size_t		digits;
 
 	number_long = number;
 	if (number_long < 0)
@@ -41,7 +41,7 @@ char	*ft_itoa_zero(void)
 
 char	*ft_itoa(int n)
 {
-	int		digit_count;
+	size_t	digit_count;
 	char	*number_str;
 	long	n_long;
 

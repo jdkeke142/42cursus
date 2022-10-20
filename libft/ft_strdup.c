@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 15:51:17 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 21:27:39 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:30:35 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strdup(const char *s)
 {
+	size_t	i;
 	size_t	str_len;
 	char	*duplicated_str;
-	size_t	i;
 
 	str_len = ft_strlen(s);
 	duplicated_str = malloc((str_len + 1) * sizeof(char));

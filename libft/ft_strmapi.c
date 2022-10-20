@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:36:34 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 21:27:27 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:31:26 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned
 int, char))
 {
-	int		i;
+	size_t	i;
 	char	*modified_s;
 
 	if (!s)

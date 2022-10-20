@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:42:32 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 21:27:43 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:30:10 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	count_words(char const *s, char c)
 {
-	int		i;
-	int		words_count;
+	size_t	i;
+	size_t	words_count;
 
 	i = 0;
 	words_count = 0;
@@ -31,8 +31,8 @@ int	count_words(char const *s, char c)
 char	*malloc_word(char const *s, char c, int start)
 {
 	char	*word;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	i = start;
 	while (s[i] && s[i] != c)
@@ -55,8 +55,8 @@ char	*malloc_word(char const *s, char c, int start)
 char	**ft_split(char const *s, char c)
 {
 	char	**words;
-	int		i;
-	int		words_count;
+	size_t	i;
+	size_t	words_count;
 
 	if (s == NULL)
 		return (NULL);

@@ -6,13 +6,15 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:57:08 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/19 17:16:57 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:30:54 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	i;
+	size_t	i;
 
 	if (!s)
 		return ;

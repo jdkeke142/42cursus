@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:29:28 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 21:27:33 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:31:04 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	char	*joined_str;
+	size_t		i;
+	char		*joined_str;
 
 	if (!s1 || !s2)
 		return (NULL);
