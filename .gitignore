@@ -4,5 +4,7 @@
 *.so
 libft/libft.c
 libft-unit-tests/
+libft-unit-test/
 libftTester/
 libft-war-machine/
+.vscode/
