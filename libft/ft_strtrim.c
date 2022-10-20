@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:14:32 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 21:27:16 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:16:10 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,43 +26,28 @@ int	set_contains(char const *set, char const c)
 	return (0);
 }
 
-int	*ft_strtrim_boundaries(char	const *s1, char const *set, int boundaries[2])
-{
-	int		i;
-
-	boundaries[0] = 0;
-	while (s1[boundaries[0]] && set_contains(set, s1[boundaries[0]]))
-		boundaries[0]++;
-	i = boundaries[0];
-	boundaries[1] = boundaries[0];
-	while (s1[i])
-	{
-		if (!set_contains(set, s1[i]))
-			boundaries[1] = i;
-		i++;
-	}
-	return (boundaries);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trimmed_str;
-	int		i;
-	int		trimmed_size;
-	int		boundaries[2];
+	size_t	i;
+	size_t	start;
+	size_t	end;
 
-	if (!s1)
-		return (NULL);
-	ft_strtrim_boundaries(s1, set, boundaries);
-	trimmed_size = (boundaries[1] - boundaries[0]) + 1;
-	i = 0;
-	trimmed_str = ft_calloc(trimmed_size + 1, sizeof(char));
+	start = 0;
+	while (s1[start] && set_contains(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && set_contains(set, s1[end - 1]))
+		end--;
+	trimmed_str = malloc((end - start + 1) * sizeof(char));
 	if (!trimmed_str)
 		return (NULL);
-	while (i < trimmed_size)
+	i = 0;
+	while (start < end)
 	{
-		trimmed_str[i] = s1[boundaries[0] + i];
+		trimmed_str[i] = s1[start];
 		i++;
+		start++;
 	}
 	trimmed_str[i] = '\0';
 	return (trimmed_str);
