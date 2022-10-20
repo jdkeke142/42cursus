@@ -6,7 +6,7 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:29:16 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/19 17:18:50 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 19:05:32 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			new_lst = ft_lstnew((*f)(temp_lst->content));
 		else
 			ft_lstadd_back(&new_lst, ft_lstnew((*f)(temp_lst->content)));
-		(*del)(temp_lst->content);
 		temp_lst = temp_lst->next;
 	}
+	ft_lstdelone(temp_lst, del);
 	return (new_lst);
 }
