@@ -6,13 +6,14 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 11:40:43 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 16:24:20 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:27:59 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

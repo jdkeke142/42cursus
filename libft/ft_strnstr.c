@@ -6,11 +6,10 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:36:50 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/19 15:27:36 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:25:23 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)

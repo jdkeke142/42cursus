@@ -6,11 +6,11 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 16:11:22 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/04 17:23:42 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:28:50 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	count_digits(int number)
 {

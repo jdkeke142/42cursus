@@ -6,11 +6,10 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:05:19 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/20 16:24:32 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:28:12 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)

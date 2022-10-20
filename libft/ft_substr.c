@@ -6,12 +6,11 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:08:09 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/19 17:18:38 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:27:20 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int	ft_substr_len(char const *s, unsigned int start, size_t len)
 {

@@ -6,11 +6,10 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:14:32 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/19 17:55:18 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:27:16 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 int	set_contains(char const *set, char const c)

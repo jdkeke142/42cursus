@@ -6,11 +6,10 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:41:22 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/05 17:47:30 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:28:05 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)

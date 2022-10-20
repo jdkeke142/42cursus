@@ -6,11 +6,9 @@
 /*   By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:51:15 by kjimenez          #+#    #+#             */
-/*   Updated: 2022/10/05 17:56:57 by kjimenez         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:28:08 by kjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void	ft_putnbr_char(char c, int fd)
 {
@@ -34,4 +32,4 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(nbr_long / 10, fd);
 		ft_putnbr_fd(nbr_long % 10, fd);
 	}
-}	
+}
