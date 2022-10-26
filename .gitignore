@@ -2,9 +2,11 @@
 *.a
 *.o
 *.so
+*.txt
 libft/libft.c
 libft-unit-tests/
 libft-unit-test/
 libftTester/
 libft-war-machine/
+get_next_line/gnlTester/
 .vscode/
