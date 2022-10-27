@@ -61,19 +61,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub_str[i] = '\0';
 	return (sub_str);
 }
-
-void	*ft_memset(void *str, int c, size_t n)
-{
-	char	*dst;
-	size_t	i;
-
-	dst = str;
-	i = 0;
-	while (i < n)
-	{
-		dst[i] = c;
-		i++;
-	}
-	return (str);
-}
-
