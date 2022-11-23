@@ -20,19 +20,19 @@ int	get_next_line_read(int fd, char **str)
 	int				chars_read;
 
 	buf = NULL;
-	while (!buf || buf[ft_strlen(buf) - 1] != '\n')
+	while (!buf || (chars_read == BUFFER_SIZE
+			&& buf[ft_strlen(buf) - 1] != '\n'))
 	{
-		if (buf)
-			free(buf);
+		free(buf);
 		buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
+		if (!buf)
+			return (0);
 		chars_read = read(fd, buf, BUFFER_SIZE);
 		if (chars_read == -1)
 		{
 			free(buf);
 			return (0);
 		}
-		if (chars_read == 0)
-			break ;
 		buf[chars_read] = '\0';
 		last_str = *str;
 		*str = ft_strjoin(*str, buf);
@@ -53,7 +53,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	if (!str)
 		str = ft_strdup("");
-	if (get_next_line_read(fd, &str) == 0)
+	if (!get_next_line_read(fd, &str))
 		return (NULL);
 	i = 0;
 	while (str[i])

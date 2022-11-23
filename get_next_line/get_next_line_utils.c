@@ -42,7 +42,7 @@ char	*ft_strdup(const char *s)
 	return (duplicated_str);
 }
 
-int	ft_substr_len(char const *s, unsigned int start, size_t len)
+static int	ft_substr_len(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 
