@@ -8,5 +8,5 @@ libft-unit-tests/
 libft-unit-test/
 libftTester/
 libft-war-machine/
-get_next_line/gnlTester/
+gnl/gnlTester/
 .vscode/
