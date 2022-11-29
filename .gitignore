@@ -9,4 +9,5 @@ libft-unit-test/
 libftTester/
 libft-war-machine/
 gnl/gnlTester/
+ft_printf/printfTester
 .vscode/
