@@ -6,7 +6,7 @@
 #    By: kjimenez <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 19:18:25 by kjimenez          #+#    #+#              #
-#    Updated: 2022/11/29 19:25:04 by kjimenez         ###   ########.fr        #
+#    Updated: 2022/12/07 18:00:02 by kjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
 clean:
-				rm -f $(OBJS) $(BONUS_OBJS)
+				rm -f $(OBJS)
 
 fclean:			clean
 				rm -f $(NAME)
