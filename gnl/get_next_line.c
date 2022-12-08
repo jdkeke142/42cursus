@@ -13,20 +13,33 @@
 #include <unistd.h>
 #include "get_next_line.h"
 
-int	get_next_line_read(int fd, char **str)
+static int	search_newline(char *str)
 {
-	char			*last_str;
-	char			*buf;
-	int				chars_read;
+	int	i;
 
-	buf = NULL;
-	while (!buf || (chars_read == BUFFER_SIZE
-			&& buf[ft_strlen(buf) - 1] != '\n'))
+	i = 0;
+	while (str[i])
 	{
-		free(buf);
-		buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
-		if (!buf)
-			return (0);
+		if (str[i] == '\n')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+static int	read_fd(int fd, char **str)
+{
+	char	*last_str;
+	char	*buf;
+	int		chars_read;
+
+	chars_read = BUFFER_SIZE;
+	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buf)
+		return (0);
+	buf[0] = '\0';
+	while (chars_read == BUFFER_SIZE && !search_newline(*str))
+	{
 		chars_read = read(fd, buf, BUFFER_SIZE);
 		if (chars_read == -1)
 		{
@@ -42,18 +55,36 @@ int	get_next_line_read(int fd, char **str)
 	return (1);
 }
 
+static void	process_str(char **str, int i)
+{
+	char	*last_str;
+
+	last_str = *str;
+	*str = ft_substr(*str, i + 1, ft_strlen(*str) - 1);
+	free(last_str);
+}
+
+static void	clean_str(char **str)
+{
+	if (ft_strlen(*str) == 0)
+	{
+		free(*str);
+		*str = NULL;
+	}
+}
+
 char	*get_next_line(int fd)
 {
-	static char		*str;
-	size_t			i;
-	char			*line;
-	char			*last_str;
+	static char	*str = NULL;
+	size_t		i;
+	char		*line;
 
+	line = NULL;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (!str)
 		str = ft_strdup("");
-	if (!get_next_line_read(fd, &str))
+	if (!read_fd(fd, &str))
 		return (NULL);
 	i = 0;
 	while (str[i])
@@ -61,12 +92,11 @@ char	*get_next_line(int fd)
 		if (str[i] == '\n' || i == ft_strlen(str) - 1)
 		{
 			line = ft_substr(str, 0, i + 1);
-			last_str = str;
-			str = ft_substr(str, i + 1, ft_strlen(str) - 1);
-			free(last_str);
-			return (line);
+			process_str(&str, i);
+			break ;
 		}
 		i++;
 	}
-	return (NULL);
+	clean_str(&str);
+	return (line);
 }
